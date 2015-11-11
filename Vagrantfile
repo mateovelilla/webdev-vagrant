@@ -101,7 +101,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vbox.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
     vbox.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/server", "1"]
   end
-  
+
   # NFS mount needs hostonly net
   # Docs: http://docs.vagrantup.com/v2/networking/private_network.html
   config.vm.network :private_network, ip: ip
@@ -150,6 +150,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Set $vagrant = 1 inside puppet manifests
     puppet.facter = {
       "vagrant" => "1",
+      'fqdn' => 'developer-php533',
       "vagrant_ssh_user" => username.strip.to_s,
     }
     puppet.options = "--hiera_config /server/vagrant/hiera.yaml"
@@ -160,7 +161,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Stuff can be done after puppet.
-  config.vm.provision :shell, :path => 'vagrant/post-puppet.sh', :args => project
+  #config.vm.provision :shell, :path => 'vagrant/post-puppet.sh', :args => project
 
   config.vm.network :forwarded_port, guest: 80,   host: $port_base + 80
   config.vm.network :forwarded_port, guest: 3306, host: $port_base + 6
