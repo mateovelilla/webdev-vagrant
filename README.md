@@ -134,3 +134,6 @@ Credits
 A big thanks to Evan Heidtmann [(ezheidtmann)](https://github.com/ezheidtmann) for taking my vague, badly-implemented idea and making it actually *work*.  The base box and most of the Puppet and configuration scripts are his work.
 
 Huge chunks shamelessly stolen from a gist posted by David Lutz [(dlutzy)](https://github.com/dlutzy): https://gist.github.com/2469037/646a2b99656ef68eba87cec3ecec96d2d581f68d
+test image
+=============
+<img src="http://img3.wikia.nocookie.net/__cb20140326213958/totaldramaisland/es/images/c/c2/Mother-foca.jpg"/>
