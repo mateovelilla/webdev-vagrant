@@ -161,7 +161,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Stuff can be done after puppet.
-  #config.vm.provision :shell, :path => 'vagrant/post-puppet.sh', :args => project
+  config.vm.provision :shell, :path => 'vagrant/post-puppet.sh', :args => project
 
   config.vm.network :forwarded_port, guest: 80,   host: $port_base + 80
   config.vm.network :forwarded_port, guest: 3306, host: $port_base + 6
